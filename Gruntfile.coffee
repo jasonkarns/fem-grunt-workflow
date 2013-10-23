@@ -29,19 +29,30 @@ module.exports = (grunt) ->
           "vendor/js/extend.js"
         ]
 
-        src: [
-          "js/config/**/*.js"
-          "js/app.js"
-          "js/data/**/*.js"
-          "js/directives/**/*.js"
-          "js/controllers/**/*.js"
-          "js/services/**/*.js"
-          "js/**/*.js"
+      coffee:
+        dest: "generated/compiled-coffee"
+        compiled: [
+          "generated/compiled-coffee/config/**/*.js"
+          "generated/compiled-coffee/app.js"
+          "generated/compiled-coffee/data/**/*.js"
+          "generated/compiled-coffee/directives/**/*.js"
+          "generated/compiled-coffee/controllers/**/*.js"
+          "generated/compiled-coffee/services/**/*.js"
+          "generated/compiled-coffee/**/*.js"
         ]
 
+    # task configuration
+    coffee:
+      compile:
+        expand: true
+        cwd: 'coffee'
+        src: '**/*.coffee'
+        dest: '<%= files.coffee.dest %>'
+        ext: '.js'
+
     concat:
-      js:
-        src: ["<%= files.js.vendor %>", "<%= files.js.src %>"]
+      app:
+        src: ["<%= files.js.vendor %>", "<%= files.coffee.compiled %>"]
         dest: "generated/js/app.min.js"
 
     watch:
@@ -54,8 +65,12 @@ module.exports = (grunt) ->
         tasks: ["copy"]
 
       js:
-        files: ["<%= files.js.vendor %>", "<%= files.js.src %>"]
+        files: ["<%= files.js.vendor %>"]
         tasks: ["concat"]
+
+      coffee:
+        files: ["coffee/**/*.coffee"]
+        tasks: ["coffee", "concat"]
 
       less:
         files: ["<%= files.less.src %>"]
@@ -63,7 +78,6 @@ module.exports = (grunt) ->
 
     less:
       options:
-        paths: ["app/css"]
         ieCompat: false
 
       dev:
@@ -97,7 +111,7 @@ module.exports = (grunt) ->
         banner: "<%= banner %>"
 
       dist:
-        src: "<%= concat.js.dest %>" # input from the concat process
+        src: "<%= concat.app.dest %>" # input from the concat process
         dest: "dist/js/app.min.js"
 
     clean:
@@ -108,6 +122,7 @@ module.exports = (grunt) ->
 
   # loading external tasks (aka: plugins)
   grunt.loadNpmTasks "grunt-contrib-concat"
+  grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-less"
   grunt.loadNpmTasks "grunt-contrib-copy"
@@ -116,6 +131,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-open"
 
   # creating workflows
-  grunt.registerTask "default", ["less:dev", "concat", "copy", "server", "open", "watch"]
-  grunt.registerTask "build", ["clean", "less:dist", "concat", "uglify", "copy"]
+  grunt.registerTask "default", ["less:dev", "coffee", "concat", "copy", "server", "open", "watch"]
+  grunt.registerTask "build", ["clean", "less:dist", "coffee", "concat", "uglify", "copy"]
   grunt.registerTask "prodsim", ["build", "server", "open", "watch"]

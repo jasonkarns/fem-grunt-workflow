@@ -64,3 +64,9 @@
 - npm i -D grunt-contrib-uglify
 - configure uglify
 - add banner
+
+=====================
+
+# auto-open the site
+
+- install and configure grunt-open

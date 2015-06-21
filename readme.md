@@ -24,3 +24,8 @@
 - configure less task
 - convert css to less
 - extract mixins
+
+# watch less files
+
+- extract 'files' config
+- add less files to watcher

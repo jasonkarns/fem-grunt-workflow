@@ -89,3 +89,8 @@
 
 - move js/css/etc assets to top level assets
 - update configs
+
+# extract angular templates
+
+- extract templates to separate files
+- install/configure grunt-angular-templates

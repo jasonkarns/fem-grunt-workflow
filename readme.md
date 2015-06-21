@@ -70,3 +70,7 @@
 # auto-open the site
 
 - install and configure grunt-open
+
+# production-like task (for serving minified assets)
+
+- create prodsim task

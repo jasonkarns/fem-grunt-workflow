@@ -12,3 +12,8 @@
 - npm install --save-dev grunt-contrib-concat
 - configure concat
 - change html page to pull in generated (concatenated) JS
+
+# auto-run concat!
+
+- npm install grunt-contrib-watch --save-dev
+- configure watch task

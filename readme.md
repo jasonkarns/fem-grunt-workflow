@@ -94,3 +94,7 @@
 
 - extract templates to separate files
 - install/configure grunt-angular-templates
+
+# configure sourcemaps
+
+- swap concat task with sourcemap-aware grunt-concat-sourcemap

@@ -48,3 +48,8 @@
 - configure watch task for livereload
 - optional: install the chrome live-reload extension
   https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
+
+# clean build dirs
+
+- npm i -D grunt-contrib-clean
+- configure clean task

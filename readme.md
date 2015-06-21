@@ -53,3 +53,9 @@
 
 - npm i -D grunt-contrib-clean
 - configure clean task
+
+# prepare for build workflow
+
+- emit CSS into dist
+- copy html to dist as well
+

@@ -59,3 +59,8 @@
 - emit CSS into dist
 - copy html to dist as well
 
+# uglify JS for build only
+
+- npm i -D grunt-contrib-uglify
+- configure uglify
+- add banner

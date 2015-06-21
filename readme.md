@@ -74,3 +74,7 @@
 # production-like task (for serving minified assets)
 
 - create prodsim task
+
+# split build into app and vendor
+
+- separate js targets

@@ -1,7 +1,7 @@
 {
   "name": "fem-grunt-workflow",
   "version": "0.0.0",
-  "description": "",
+  "description": "building a grunt pipeline",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

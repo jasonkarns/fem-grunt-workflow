@@ -43,3 +43,8 @@
 - create custom server task: tasks/server.js
 - configure server task
 
+# enable livereload
+
+- configure watch task for livereload
+- optional: install the chrome live-reload extension
+  https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en

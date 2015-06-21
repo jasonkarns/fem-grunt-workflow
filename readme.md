@@ -84,3 +84,8 @@
 - switch sources to coffee
 - install/configure coffee task
 - update watchers and pipeline
+
+# top-level app directory
+
+- move js/css/etc assets to top level assets
+- update configs

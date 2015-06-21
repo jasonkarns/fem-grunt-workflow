@@ -17,3 +17,10 @@
 
 - npm install grunt-contrib-watch --save-dev
 - configure watch task
+
+# switch to less
+
+- npm i --save-dev grunt-contrib-less
+- configure less task
+- convert css to less
+- extract mixins

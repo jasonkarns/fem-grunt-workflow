@@ -35,3 +35,11 @@
 - npm i -D grunt-contrib-copy
 - configure copy task
 - update index paths
+
+# custom server
+
+- npm i -D express
+- mkdir tasks
+- create custom server task: tasks/server.js
+- configure server task
+

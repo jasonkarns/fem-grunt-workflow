@@ -29,3 +29,9 @@
 
 - extract 'files' config
 - add less files to watcher
+
+# serve index from generated
+
+- npm i -D grunt-contrib-copy
+- configure copy task
+- update index paths

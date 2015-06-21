@@ -78,3 +78,9 @@
 # split build into app and vendor
 
 - separate js targets
+
+# support coffeescript
+
+- switch sources to coffee
+- install/configure coffee task
+- update watchers and pipeline
